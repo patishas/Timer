@@ -1,27 +1,54 @@
-# Timer
+# Timer Component
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+## Environment 
 
-## Development server
+- Angular CLI Version: 10.0.4
+- Angular Core Version: 10.0.4
+- Node Version: v14 (LTS)
+- Default Port: 8000
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Application Demo:
 
-## Code scaffolding
+![](https://hrcdn.net/s3_pub/istreet-assets/W17Zgevg-Fzh-gBz-EdUGg/timer-component.gif)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Functionality Requirements
 
-## Build
+Create a timer component that decreases the count by 1 every second.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The component has the following functionalities:
 
-## Running unit tests
+- The timer value decreases by 1 every second. For example, if the initial value is 100, after 1 second it becomes 99, after 1 more second it becomes 98, and so on.
+- The timer value starts decreasing right after the component is mounted.
+- The initial value of the timer is set by a prop `initial` passed down to the component.
+- Once the counter value becomes 0, it should not decrease further.
+- The button `Stop Timer` stops the timer at the current value. For example, if the initial value was 120, and the button is pressed at 110, the timer stops at value 110.
+ 
+## Testing Requirements
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The following data-test-id attributes are required in the component for the tests to pass:
 
-## Running end-to-end tests
+- The timer value should have the data-test-id attribute `timer-value`.
+- The `Stop Timer` button should have the data-test-id attribute `stop-button`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Please note that the component has the above data-test-id attributes for test cases and certain classes and ids for rendering purposes. It is advised not to change them.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Project Specifications
+
+**Read Only Files**
+- src/app/app.component.spec.ts
+- src/app/timer/timer.component.spec.ts
+
+**Commands**
+- run: 
+```bash
+npm start
+```
+- install: 
+```bash
+npm install
+```
+- test: 
+```bash
+npm test
+```
